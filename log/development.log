@@ -757,3 +757,6 @@ Processing by ArtistsController#show as HTML
   [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?  [["artist_id", 1]]
   Rendered artists/show.html.erb within layouts/application (9.7ms)
 Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+  [1m[36mArtist Load (1.3ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Exists (0.3ms)[0m  SELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1234]]

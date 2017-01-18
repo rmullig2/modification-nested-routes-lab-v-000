@@ -45,15 +45,17 @@ class SongsController < ApplicationController
 
   def edit
     #binding.pry
-    if !Artist.exists?(params[:artist_id])
-      redirect_to artists_path
-    else
-      @artist = Artist.find_by(id: params[:artist_id])
-      if !Song.exists?(params[:id])
-        redirect_to artist_songs_path(@artist)
+    if !params[:artist_id].nil?
+      if !Artist.exists?(params[:artist_id])
+        redirect_to artists_path
       else
-        @song = Song.find(params[:id])
+        @artist = Artist.find_by(id: params[:artist_id])
       end
+    end
+    if !Song.exists?(params[:id])
+      redirect_to artist_songs_path(@artist)
+    else
+      @song = Song.find(params[:id])
     end
   end
 
